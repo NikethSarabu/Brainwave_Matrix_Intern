@@ -45,9 +45,13 @@ Task-2/
 
 ## Usage
 1. Run the application:
-   ```
-   python main.py
-   ```
+    ```bash
+    bash run.sh
+    ```
+    or 
+    ```bash
+    python main/main.py
+    ```
 
 2. The GUI will prompt for user login. Create a new user or use the default admin credentials:
    - Username: `admin`
