@@ -16,3 +16,6 @@ class ProductService:
 
     def update_product(self, product: Product):
         self.repository.update(product)
+
+    def list_all_products(self):
+        return self.repository.get_all_products()

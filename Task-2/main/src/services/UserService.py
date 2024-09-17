@@ -1,5 +1,5 @@
-from repositories.UserRepository import UserRepository
-from entities.User import User
+from src.repositories.UserRepository import UserRepository
+from src.entities.User import User
 
 class UserService:
     def __init__(self, repository: UserRepository):
@@ -16,3 +16,20 @@ class UserService:
 
     def update_user(self, user: User):
         self.repository.update(user)
+
+    def authenticate(self, username, password):
+        user = self.repository.find_by_username(username)
+        if user and user.password == password:
+            return user
+        else:
+            raise ValueError("Invalid username or password")
+
+    def list_all_users(self):
+        return self.repository.get_all_users()
+
+    def change_password(self, username, old_password, new_password):
+        user = self.repository.get_by_username(username)
+        if user and user.password == old_password:
+            user.password = new_password
+        else:
+            raise ValueError("Invalid old password")

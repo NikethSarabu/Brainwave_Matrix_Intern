@@ -1,5 +1,5 @@
 from typing import Dict
-from entities.User import User
+from src.entities.User import User
 
 class UserRepository:
     def __init__(self):
@@ -17,3 +17,9 @@ class UserRepository:
 
     def update(self, user: User):
         self.users[user.user_id] = user
+
+    def find_by_username(self, username):
+        for user in self.users.values():
+            if user.username == username:
+                return user
+        return None

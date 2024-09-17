@@ -17,3 +17,6 @@ class ProductRepository:
 
     def update(self, product: Product):
         self.products[product.product_id] = product
+
+    def get_all_products(self):
+        return list(self.products.values())

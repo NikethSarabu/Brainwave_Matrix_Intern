@@ -1,5 +1,5 @@
-from repositories.UserRepository import UserRepository
-from entities.User import User
+from src.repositories.UserRepository import UserRepository
+from src.entities.User import User
 
 class AuthenticationService:
     def __init__(self, repository: UserRepository):
